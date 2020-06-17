@@ -139,4 +139,49 @@ public class ImplAddressBook {
         }
     }
 
+    public void printByCity()
+    {
+        String cityName=" ";
+        System.out.println("Open Address Book");
+
+        HashMap<String, String> map = new HashMap<String, String>();
+
+        for (int i = 0; i < persons.size(); i++)
+        {
+            map.put(persons.get(i).getAddressObj().getCity(), persons.get(i).getAddressObj().getCity());
+        }
+
+        System.out.println("city available " + map.keySet());	// this fun gives view(display) of all states already entered by user
+        System.out.println("Enter city");
+
+        cityName = scanner.next();
+        boolean isFoundState = false;
+
+        for (int i = 0; i < persons.size(); i++)
+        {
+            if (persons.get(i).getAddressObj().getCity().equals(cityName))
+            {
+                isFoundState = true;
+                break;
+            }
+        }
+
+        if (isFoundState)
+        {
+            System.out.println("->City is found<-");
+
+            if (counter > 0)
+            {
+                System.out.println("Printing all records...");
+                ImplAddressBookUtil.PrintPersonDetailsByCity(persons,cityName);
+
+            } else
+                System.out.println("There is no record to print...");
+
+
+        } else
+            System.out.println("Please create new city of that name\nelse try new city name");
+
+    }
+
 }
