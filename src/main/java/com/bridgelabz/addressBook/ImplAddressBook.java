@@ -209,4 +209,86 @@ public class ImplAddressBook {
         }
     }
 
+    public void sortByZip()
+    {
+        if (counter > 1)
+        {
+            System.out.println("Sorting by zip");
+
+            Collections.sort(persons, (e1, e2) -> String.valueOf(e1.getAddressObj().getZip())
+                    .compareTo(String.valueOf(e2.getAddressObj().getZip())));			// check it
+
+            System.out.println("Please wait...");
+
+            try
+            {
+                Thread.sleep(2000);
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+            System.out.println("Sorting is completed to see the result select print option");
+        }
+        else
+        {
+            System.out.println("Less records to sort");
+        }
+    }
+
+
+
+    public void sortByCity()
+    {
+        if (counter > 1)
+        {
+            System.out.println("Sorting by city");
+
+            Collections.sort(persons, (e1, e2) -> String.valueOf(e1.getAddressObj().getCity())
+                    .compareTo(String.valueOf(e2.getAddressObj().getCity())));			// check it
+
+            //System.out.println("Please wait...");
+
+            try
+            {
+                Thread.sleep(2000);
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+            System.out.println("Sorting is completed to see the result select print option");
+        }
+        else
+        {
+            System.out.println("Less records to sort");
+        }
+    }
+
+    public void sortByState()
+    {
+        if (counter > 1)
+        {
+            System.out.println("Sorting by state");
+
+            Collections.sort(persons, (e1, e2) -> String.valueOf(e1.getAddressObj().getState())
+                    .compareTo(String.valueOf(e2.getAddressObj().getState())));			// check it
+
+            //System.out.println("Please wait...");
+
+            try
+            {
+                Thread.sleep(2000);
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+            System.out.println("Sorting is completed to see the result select print option");
+        }
+        else
+        {
+            System.out.println("Less records to sort");
+        }
+    }
 }
