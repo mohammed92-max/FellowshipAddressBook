@@ -30,7 +30,7 @@ public class AddressBookMain
                 case 1: util.createNewAddressBook();
                     break;
 
-                default: System.out.println("Invalid option");
+                default: System.out.println("Invalid input");
                     break;
             }
         }
