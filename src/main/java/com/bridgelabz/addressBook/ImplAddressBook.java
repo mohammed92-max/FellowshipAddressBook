@@ -95,4 +95,48 @@ public class ImplAddressBook {
         System.out.println("-----------------------New Address Book-----------------------");
 
     }
+
+    public void deletePerson()
+    {
+        if (counter > 0)
+        {
+            System.out.println("Enter Persons mobile number you want to delete:");
+            Long mobileSearch = scanner.nextLong();
+
+            indexOfPerson = 0;
+            boolean isFoundPerson = false;
+            System.out.println("Before for loop");
+
+            for (int i = 0; i < persons.size(); i++)
+            {
+                System.out.println("Inside for loop");
+
+                if (mobileSearch == (persons.get(i).getMobile())) // can we use indexOfPerson instead of i
+                {
+                    System.out.println("Inside if");
+                    isFoundPerson = true;
+                    indexOfPerson = i;
+                    break;
+                }
+            }
+
+            if (isFoundPerson)
+            {
+                persons.remove(indexOfPerson);
+                counter--;
+
+                System.out.println();
+                System.out.println("Delete completed");
+            }
+            else
+            {
+                System.out.println("No person found with this number");
+            }
+        }
+        else
+        {
+            System.out.println("No records to delete");
+        }
+    }
+
 }

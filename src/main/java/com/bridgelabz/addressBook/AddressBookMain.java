@@ -20,7 +20,7 @@ public class AddressBookMain
 
         while (!isExitAddressBook)
         {
-            System.out.println("Select menu");
+            System.out.println("Select menu \n");
             System.out.println("1. New Address Book\n ");
 
             int choice = scanner.nextInt();
