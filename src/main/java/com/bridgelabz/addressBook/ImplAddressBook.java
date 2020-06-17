@@ -184,4 +184,29 @@ public class ImplAddressBook {
 
     }
 
+    public void sortByLastName()
+    {
+        if (counter > 1)
+        {
+            System.out.println("Sorting by Last name is selected");
+
+            Collections.sort(persons, (e1, e2) -> e1.getLastname().compareTo(e2.getLastname()));	//check it
+
+
+            try
+            {
+                Thread.sleep(2000);			// why to use
+            }
+            catch (InterruptedException e)
+            {
+                e.printStackTrace();
+            }
+            System.out.println("Sorting completed");
+        }
+        else
+        {
+            System.out.println("Less records to sort");
+        }
+    }
+
 }
